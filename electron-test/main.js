@@ -9,7 +9,12 @@ var BrowserWindow = electron.BrowserWindow
 var mainWindow = null;
 app.on('ready', () => {
     //设置打开的窗口大小
-    mainWindow = new BrowserWindow({ width: 500, height: 500 })
+    mainWindow = new BrowserWindow({
+        width: 666,
+        height: 666,
+        // 开启node的所有功能
+        webPreferences: { nodeIntegration: true }
+    })
     //加载那个页面
     mainWindow.loadFile('index.html')
     //监听关闭事件，把主窗口设置为null
