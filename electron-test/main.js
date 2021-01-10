@@ -13,7 +13,9 @@ app.on('ready', () => {
         width: 666,
         height: 666,
         // 开启node的所有功能
-        webPreferences: { nodeIntegration: true }
+        webPreferences: {
+            nodeIntegration: true, enableRemoteModule: true
+        }
     })
     //加载那个页面
     mainWindow.loadFile('index.html')
