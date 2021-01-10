@@ -10,6 +10,8 @@ var menuTemplate = [
         submenu: [
             {
                 label: '精品SPA',
+                // 快捷键
+                accelerator: 'ctrl+n',
                 // 主要代码--------------start
                 click: () => {
                     win = new BrowserWindow({
