@@ -19,7 +19,8 @@ window.onload = function () {
             height: 500,
         })
         newWin.loadFile('views/newWindow.html')
-        newWin.on('close', () => { newWin = null })
+        // 监听关闭事件, 关闭之后销毁窗口, 防止占用太多内存
+        newWin.on('closed', () => { newWin = null })
     }
 
 }
