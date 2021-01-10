@@ -17,6 +17,8 @@ app.on('ready', () => {
             nodeIntegration: true, enableRemoteModule: true
         }
     })
+    // 直接开启调试模式
+    mainWindow.webContents.openDevTools()
     // 加载菜单
     require("./main/menu.js")
     // 加载那个页面, 这个相当于是主页面
