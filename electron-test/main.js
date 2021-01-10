@@ -17,7 +17,7 @@ app.on('ready', () => {
             nodeIntegration: true, enableRemoteModule: true
         }
     })
-    //加载那个页面
+    //加载那个页面, 这个相当于是主页面
     mainWindow.loadFile('index.html')
     //监听关闭事件，把主窗口设置为null
     mainWindow.on('closed', () => {

@@ -18,7 +18,7 @@ window.onload = function () {
             width: 500,
             height: 500,
         })
-        newWin.loadFile('newWindow.html')
+        newWin.loadFile('views/newWindow.html')
         newWin.on('close', () => { newWin = null })
     }
 
