@@ -1,5 +1,6 @@
-// 引入Menu
-const { Menu } = require('electron')
+// menu菜单是在主线程之中的！！！
+// 引入Menu, BrowserWindow, 这个其实就是按需引入
+const { Menu, BrowserWindow } = require('electron')
 
 var menuTemplate = [
     {
@@ -7,7 +8,22 @@ var menuTemplate = [
         label: '凤来怡洗浴会所',
         // 子菜单，菜单项
         submenu: [
-            { label: '精品SPA' },
+            {
+                label: '精品SPA',
+                // 主要代码--------------start
+                click: () => {
+                    win = new BrowserWindow({
+                        width: 500,
+                        height: 500,
+                        webPreferences: { nodeIntegration: true }
+                    })
+                    win.loadFile('views/newWindow.html')
+                    win.on('closed', () => {
+                        win = null
+                    })
+                }
+                // 主要代码--------------end
+            },
             { label: '泰式按摩' }
         ]
 
