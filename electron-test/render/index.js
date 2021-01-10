@@ -23,5 +23,9 @@ window.onload = function () {
         newWin.on('closed', () => { newWin = null })
     }
 
+    // 放到这会让主页面响应
+    window.addEventListener('contextmenu', function () {
+        alert(111);
+    })
 }
 
